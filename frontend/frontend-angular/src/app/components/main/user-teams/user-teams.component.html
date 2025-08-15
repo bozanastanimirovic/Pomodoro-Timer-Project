@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+<mat-toolbar color="accent">
+    <span class="title-center">Teams</span>
+  </mat-toolbar>
+  
+  <div class="container">
+    <mat-table matSort [dataSource]="dataSource" class="mat-cell">
+      <ng-container matColumnDef="id">
+        <mat-header-cell mat-sort-header *matHeaderCellDef>ID</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.id }}</mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="teamName">
+        <mat-header-cell *matHeaderCellDef>Team Name</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.teamName }}</mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row
+        style="cursor: pointer;"
+        *matRowDef="let row; columns: displayedColumns" 
+        (click)="selectRow(row)">
+      </mat-row>
+    </mat-table> 
+  
+    <!-- <mat-paginator [length]="dataSource.data.length" [pageSize]="5" [pageSizeOptions]="[5, 10, 20]"></mat-paginator> -->
+  </div>
+
+  <div class="container mat-elavation-z8">
+    <app-team-users
+      *ngIf="parentSelectedTeam"
+      [childSelectedTeam]="parentSelectedTeam">
+    </app-team-users>
+  </div>
+  

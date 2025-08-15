@@ -1,0 +1,51 @@
+<div class="register-container">
+    <h4>REGISTER</h4>
+    <form (ngSubmit)="onRegister()">
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <input matInput [(ngModel)]="username" name="username" required placeholder="Enter your username">
+        </mat-form-field>
+      </div>
+  
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput [(ngModel)]="email" name="email" required placeholder="Enter your email">
+        </mat-form-field>
+      </div>
+  
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>First Name</mat-label>
+          <input matInput [(ngModel)]="firstName" name="firstName" required placeholder="Enter your first name">
+        </mat-form-field>
+      </div>
+  
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name</mat-label>
+          <input matInput [(ngModel)]="lastName" name="lastName" required placeholder="Enter your last name">
+        </mat-form-field>
+      </div>
+  
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput [(ngModel)]="password" name="password" required placeholder="Enter your password" type="password">
+        </mat-form-field>
+      </div>
+  
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Confirm Password</mat-label>
+          <input matInput [(ngModel)]="confirmPassword" name="confirmPassword" required placeholder="Confirm your password" type="password">
+        </mat-form-field>
+      </div>
+  
+      <button mat-raised-button color="primary" type="submit">Register</button>
+    </form>
+    <p class="login">Already have an account? </p>
+    <p class="link"><a class="link" routerLink="/login">Log in</a></p>
+  </div>
+  

@@ -1,0 +1,70 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Ignore IntelliJ IDEA project files
+.idea/
+*.iml
+*.iws
+out/
+
+# Ignore VS Code project files
+.vscode/
+
+# Node.js (for React and Angular projects)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# React specific files
+build/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Angular specific files
+dist/
+.angular/
+.sass-cache/
+coverage/
+tmp/
+
+# Spring Boot specific files
+target/
+*.jar
+*.war
+*.ear
+
+# Maven specific files
+*.mvn/
+!.mvn/wrapper/maven-wrapper.jar
+**/mvn/wrapper/maven-wrapper.jar
+**/target/
+
+# Gradle specific files
+.gradle/
+build/
+
+# Environment variables
+.env
+*.env
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Log files
+logs/
+*.log
+*.log.*
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*.bak
+*~

@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+<mat-toolbar class="title" color="accent">
+    <span class="title-center">Users</span>
+  </mat-toolbar>
+  
+  <div class="table">
+    <mat-table matSort [dataSource]="dataSource" class="mat-cell">
+      <ng-container matColumnDef="id">
+        <mat-header-cell mat-sort-header *matHeaderCellDef>ID</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.id }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="username">
+        <mat-header-cell mat-sort-header *matHeaderCellDef>Username</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.username }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.email }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.name }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="surname">
+        <mat-header-cell *matHeaderCellDef>Surname</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.surname }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="role">
+        <mat-header-cell *matHeaderCellDef>Role</mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <ng-container *ngIf="row.role.roleName === 'ROLE_ADMIN'">
+            Admin
+          </ng-container>
+          <ng-container *ngIf="row.role.roleName !== 'ROLE_ADMIN'">
+            User
+          </ng-container>
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row; let i = index">
+            <mat-icon color="warn" aria-label="Edit" (click)="openDialog(2,row.id,row.role)">edit</mat-icon>
+            <mat-icon color="warn" aria-label="Delete" (click)="openDialog(3,row.id,row.role)">delete</mat-icon>
+            <mat-icon color="warn" [routerLink]="['/statistics', row.id]" aria-label="Statistics">bar_chart</mat-icon>
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row
+        style="cursor: pointer;"
+        *matRowDef="let row; columns: displayedColumns">
+      </mat-row>
+    </mat-table>
+
+    <mat-paginator [length]="20" [pageSize]="6" [pageSizeOptions]="[3,6,9,12]">
+
+    </mat-paginator>
+  </div>

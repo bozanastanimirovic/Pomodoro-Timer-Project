@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+<mat-toolbar color="accent">
+  <span class="title-center">Teams</span>
+</mat-toolbar>
+  
+  <div class="table">
+    <mat-table matSort [dataSource]="dataSource" class="mat-cell">
+      <ng-container matColumnDef="id">
+        <mat-header-cell mat-sort-header *matHeaderCellDef>ID</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.id }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="teamName">
+        <mat-header-cell mat-sort-header *matHeaderCellDef>Team Name</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.teamName }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>
+            <mat-icon  (click)="openDialog(1)">add</mat-icon>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row; let i = index">
+            <mat-icon color="warn" (click)="openDialog(2,row.id,row.teamName)" aria-label="Edit">edit</mat-icon>
+            <mat-icon color= "warn" (click)="openDialog(3,row.id,row.teamName)" aria-label="Delete">delete</mat-icon>
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row
+        style="cursor: pointer;"
+        *matRowDef="let row; columns: displayedColumns" 
+        (click)="selectRow(row)">
+      </mat-row>
+    </mat-table>
+    
+
+    <mat-paginator [length]="20" [pageSize]="6" [pageSizeOptions]="[3,6,9,12]">
+
+    </mat-paginator>
+  </div>
+
+  <div class="container mat-elavation-z8">
+    <app-team-users
+      *ngIf="parentSelectedTeam"
+      [childSelectedTeam]="parentSelectedTeam">
+    </app-team-users>
+  </div>

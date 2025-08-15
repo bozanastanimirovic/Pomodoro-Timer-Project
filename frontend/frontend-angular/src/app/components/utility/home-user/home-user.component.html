@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+<div class="home-container">
+  <mat-card class="welcome-card">
+      <img src="assets\home.png" alt="Pomodoro Logo" class="logo" /> 
+      <mat-card-header class="welcome">
+        <mat-card-title >Welcome to Pomodoro, {{currentUser?.name}} {{currentUser?.surname}}!</mat-card-title>
+    </mat-card-header>
+      <mat-card-content class="welcome">
+        <p>
+          Take control of your time and productivity with the Pomodoro Technique! Use this app to organize your tasks, stay focused, and achieve your goals efficiently.
+      </p>
+      <p>
+          Want to get started? Use the timer to begin your first Pomodoro session or check your progress with detailed statistics.
+      </p>
+      <div class="actions">
+        <button mat-raised-button color="accent" [routerLink]="['/pomodoro']">Start Pomodoro</button>
+        <button mat-raised-button color="accent" [routerLink]="['/statistics/', currentUser?.id]">View Statistics</button>
+    </div>
+      </mat-card-content>
+  </mat-card>
+</div>

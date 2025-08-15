@@ -1,0 +1,68 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    margin: 0 auto;
+    align-items: center;
+    padding: 32px;
+    gap: 16px;
+  }
+  
+  form{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  h3{
+    text-align: center;
+  }
+  
+  .mat-form-field{
+    font-size: 16px;
+    flex-grow: 1;
+  }
+
+  mat-select {
+    font-size: 14px;  /* Manji font */
+    width: 170%; /* Širina padajuće liste */
+  }
+  
+  .mat-select-trigger {
+    font-size: 14px;  /* Manji font za tekst u inputu */
+    padding: 8px; /* Povećajte padding ako želite više prostora unutar inputa */
+  }
+  
+  .mat-option {
+    font-size: 14px;  /* Manji font za opcije */
+    padding: 10px; /* Prostor između opcija u listi */
+  }
+  
+  
+  .mat-dialog-actions{
+    display: flex;
+    width: 80%;
+    justify-content: space-evenly;
+  }
+  
+  mat-dialog-actions button{
+    align-items: center;
+    padding: 12px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    background-color: #ff4d4d;
+    margin: 5px;
+  }
+
+  mat-dialog-actions button:hover {
+    align-items: center;
+    padding: 12px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    background-color: pink;
+    margin: 5px;
+  }

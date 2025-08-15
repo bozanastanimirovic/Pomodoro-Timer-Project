@@ -1,0 +1,55 @@
+.statistics-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  h2 {
+    color: #ff4d4d;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .statistics-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .statistics-table th, .statistics-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .statistics-table th {
+    background-color: #ff4d4d;
+    color: white;
+  }
+  
+  .statistics-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .statistics-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .no-data {
+    text-align: center;
+    color: #999;
+    margin-top: 20px;
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 18px;
+    color: #ff4d4d;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+  }
+  

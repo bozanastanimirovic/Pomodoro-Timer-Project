@@ -1,0 +1,21 @@
+<div class="container">
+    <p mat-dialog-title *ngIf="flag == 2">Update {{data.name}} {{data.surname}}</p>
+    <p mat-dialog-title *ngIf="flag == 3">Delete user: {{data.id}}</p>
+
+    <form class="mat-dialog-content" #formControl="ngForm">
+        <div class="form">
+            <mat-select [compareWith]="compare" placeholder="Role" name="Role"
+         [disabled]="flag==3" [(ngModel)]="data.role" required>
+            <mat-option class="mat-option" *ngFor="let role of roles" [value]="role">
+                {{role.roleName}}
+            </mat-option>
+        </mat-select>
+           </div>
+    </form>
+
+    <div class="mat-dialog-actions">
+        <button mat-raised-button color="primary" *ngIf="flag == 2" type="submit" [disabled]="!formControl.valid" (click)="updateRole()">Modify</button>
+        <button mat-raised-button color="primary" *ngIf="flag == 3" mat-dialog-close="1" (click)="deleteUser()">Delete</button>
+        <button mat-raised-button color="primary" (click)="cancel()">Cancel</button>
+    </div>
+</div>

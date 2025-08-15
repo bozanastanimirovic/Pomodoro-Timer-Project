@@ -1,0 +1,43 @@
+<div class="profile-container">
+  <!-- Prikazivanje korisničkih podataka -->
+  <div class="profile-card" *ngIf="user">
+    <div class="profile-details" *ngIf="!editMode">
+      <p><strong>Username:</strong> {{ user.username }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Ime:</strong> {{ user.name }}</p>
+      <p><strong>Prezime:</strong> {{ user.surname }}</p>
+      
+      <button mat-icon-button color="primary" (click)="enableEditMode()">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+
+    <!-- Forma za editovanje -->
+    <form *ngIf="editMode" [formGroup]="profileForm" (ngSubmit)="saveChanges()">
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Ime</mat-label>
+        <input matInput formControlName="name" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Prezime</mat-label>
+        <input matInput formControlName="surname" required />
+      </mat-form-field>
+
+      <div class="action-buttons">
+        <button mat-raised-button color="primary" type="submit" [disabled]="profileForm.invalid">Sačuvaj</button>
+        <button mat-raised-button color="warn" type="button" (click)="cancelEditMode()">Otkaži</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+    <p mat-dialog-title *ngIf="flag == 1">Add new team</p>
+    <p mat-dialog-title *ngIf="flag == 2">Update team: {{data.id}}</p>
+    <p mat-dialog-title *ngIf="flag == 3">Delete team: {{data.id}}</p>
+
+    <form class="mat-dialog-content" #formControl="ngForm">
+        <div class="form">
+            <mat-form-field>
+                <input matInput placeholder="Name" name="teamName" [disabled]="flag==3" [(ngModel)]="data.teamName" required />
+            </mat-form-field>
+        </div>
+    </form>
+
+    <div class="mat-dialog-actions">
+        <button mat-raised-button color="warn" *ngIf="flag == 1" type="submit" [disabled]="!formControl.valid" (click)="add()">Save</button>
+        <button mat-raised-button color="warn" *ngIf="flag == 2" type="submit" [disabled]="!formControl.valid" (click)="update()">Modify</button>
+        <button mat-raised-button color="warn" *ngIf="flag == 3" mat-dialog-close="1" (click)="delete()">Delete</button>
+        <button mat-raised-button color="warn" (click)="cancel()">Cancel</button>
+    </div>
+</div>

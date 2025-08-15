@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+  
+  <div *ngIf="error" class="error">
+    <p>{{ error }}</p>
+  </div>
+  
+  <div *ngIf="!error" class="statistics-container">
+    <h2>{{ name }} {{surname}}'s Pomodoro Statistics</h2>
+  
+    <table *ngIf="tasks.length > 0" class="statistics-table">
+      <thead>
+        <tr>
+          <th>Task Name</th>
+          <th>Completed Pomodoros</th>
+          <th>Finished</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>{{ task.name }}</td>
+          <td>{{ task.sessionsCompleted }}</td>
+          <td>
+            <span *ngIf="task.finished; else notFinished">&#10004;</span>
+            <ng-template #notFinished>&#10008;</ng-template>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="tasks.length === 0" class="no-data">
+      <p>No tasks found for this user.</p>
+    </div>
+  </div>
+  

@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>Add Users to Team</h2>
+<mat-dialog-content>
+  <p>Select users to add to the team:</p>
+  <mat-list>
+    <mat-list-item *ngFor="let user of availableUsers">
+      <mat-checkbox [(ngModel)]="user.selected">{{ user.name }} {{ user.surname }}</mat-checkbox>
+    </mat-list-item>
+  </mat-list>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="cancel()">Cancel</button>
+  <button mat-button color="primary" (click)="addUsers()">Add Users</button>
+</mat-dialog-actions>

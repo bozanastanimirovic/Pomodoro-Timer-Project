@@ -1,0 +1,11 @@
+<app-navbar></app-navbar>
+
+<div class="home-container">
+  <div >
+    <app-timer class="timer" [selectedTask]="selectedTask"></app-timer>
+  </div>
+  
+  <div class="tasks-container">
+    <app-tasks class="tasks" (taskSelected)="onTaskSelected($event)"></app-tasks>
+  </div>
+</div>

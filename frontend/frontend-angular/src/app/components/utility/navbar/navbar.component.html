@@ -1,0 +1,36 @@
+<mat-toolbar color="primary" class="navbar">
+  <img src="assets\pomodoro-logo.png" alt="Pomodoro Logo" class="logo" /> 
+  <span class="app-title" [routerLink]="user?.role?.roleName === UserRole.RoleAdmin ? '/home' : '/home-user'">POMODORO</span>
+
+  <span class="spacer"></span>
+
+  <ng-container *ngIf="user">
+    <ng-container *ngIf="user?.role?.roleName === UserRole.RoleAdmin">
+      <button mat-button routerLink="/teams" routerLinkActive="active">TEAMS</button>
+      <button mat-button routerLink="/users" routerLinkActive="active">USERS</button>
+    </ng-container>
+
+    <ng-container *ngIf="user?.role?.roleName === UserRole.RoleUser">
+      <button mat-button routerLink="/pomodoro" routerLinkActive="active">POMODORO</button>
+      <button mat-button [routerLink]="['/statistics', id]" routerLinkActive="active">STATISTICS</button>
+      <button mat-button routerLink="/userteams" routerLinkActive="active">TEAMS</button>
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngIf="user; else notLoggedIn">
+    <span class="user-info">{{ user.name }} {{ user.surname }}
+    </span>
+    <button mat-icon-button (click)="logout()" aria-label="Logout">
+      <mat-icon class="white-icon">logout</mat-icon>
+    </button>
+  </ng-container>
+
+  <ng-template #notLoggedIn>
+    <button mat-icon-button routerLink="/login" aria-label="Login">
+      <mat-icon class="white-icon">account_circle</mat-icon>
+    </button>
+    <span class="login"><a class="link" routerLink="/login">Sign in</a></span>
+  </ng-template>
+
+  
+</mat-toolbar>

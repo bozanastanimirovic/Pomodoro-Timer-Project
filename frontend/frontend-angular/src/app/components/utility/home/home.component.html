@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<div class="home-container">
+  <mat-card class="welcome-card">
+      <img src="assets\home.png" alt="Pomodoro Logo" class="logo" /> 
+      <mat-card-header class="welcome">
+        <mat-card-title >Welcome to POMODORO, {{currentUser?.name}} {{currentUser?.surname}}!</mat-card-title>
+    </mat-card-header>
+      <mat-card-content class="welcome">
+          <p>
+              You are logged in as an Administrator. You can manage users, view system data, and configure settings.
+          </p>
+          <button mat-raised-button color="accent" [routerLink]="['/teams']">Manage Teams</button>
+      </mat-card-content>
+  </mat-card>
+</div>

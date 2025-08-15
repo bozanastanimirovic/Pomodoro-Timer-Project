@@ -1,0 +1,61 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    margin: 0 auto;
+    align-items: center;
+    padding: 32px;
+    gap: 16px;
+  }
+  
+  form{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  p{
+    text-align: center;
+    color: #333;
+  }
+  
+  .custom-button {
+    background-color: pink; 
+    color: white;
+}
+
+  .custom-button:hover {
+    background-color: red; 
+  }
+  
+  .mat-form-field{
+    font-size: 16px;
+    flex-grow: 1;
+  }
+  
+  .mat-dialog-actions{
+    display: flex;
+    width: 80%;
+    justify-content: space-evenly;
+  }
+  
+  mat-dialog-actions button {
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    background-color:#ff4d4d;
+    border: none;
+    color: white;
+    align-items: center;
+  }
+
+  mat-dialog-actions button:hover {
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    background-color: pink;
+    border: none;
+    color: white;
+    align-items: center;
+  }
+  

@@ -1,0 +1,55 @@
+.timer-container {
+  text-align: center;
+  color: #fff;
+  background-color: #ff4d4d;
+  padding: 20px;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.timer-circle {
+  width: 200px; 
+  height: 200px; 
+  background-color: rgba(255, 255, 255, 0.5); 
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  font-size: 4rem;
+  border: 5px solid #fff; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+.controls button,
+.session-buttons button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #ff4d4d;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background-color: #ffe6e6;
+}
+
+.session-buttons button {
+  margin-top: 10px;
+}
+
+.session-buttons button:hover {
+  background-color: #ffe6e6;
+}

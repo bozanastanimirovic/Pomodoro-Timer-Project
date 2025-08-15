@@ -1,0 +1,31 @@
+<div class="timer-container">
+  <h3>
+    <ng-container *ngIf="sessionType === 'POMODORO'">
+      POMODORO
+    </ng-container>
+    <ng-container *ngIf="sessionType === 'SHORT_BREAK'">
+      SHORT BREAK
+    </ng-container>
+    <ng-container *ngIf="sessionType === 'LONG_BREAK'">
+      LONG BREAK
+    </ng-container>
+  </h3>
+  
+  
+  <div class="timer-circle">
+    <h1>{{ minutes }}:{{ seconds | number: '2.0' }}</h1>
+  </div>
+
+  <div class="controls">
+    <button (click)="startSession()">
+      {{ running && !isPaused ? 'Pause' : isPaused ? 'Resume' : 'Start' }}
+    </button>
+    <button (click)="resetTimer()">Reset</button>
+  </div>
+
+  <div class="session-buttons">
+    <button (click)="setSession(SessionType.POMODORO)">Pomodoro</button>
+    <button (click)="setSession(SessionType.SHORT_BREAK)">Short Break</button>
+    <button (click)="setSession(SessionType.LONG_BREAK)">Long Break</button>
+  </div>
+</div>

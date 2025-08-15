@@ -1,0 +1,70 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100vh;
+  }
+  
+  .profile-card {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile-details p {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  button {
+    align-self: flex-end;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  button.mat-raised-button {
+    width: 48%;
+  }
+  
+  button.mat-raised-button[color="primary"] {
+    background-color: #e53935;  // Crvena boja za dugme za sačuvaj
+    color: white;
+  }
+  
+  button.mat-raised-button[color="warn"] {
+    background-color: #ffcc00;  // Boja za otkazivanje
+    color: black;
+  }
+  
+  mat-icon {
+    font-size: 24px;
+    color: #e53935; // Crvena boja za ikonu
+  }
+  
+  mat-form-field.mat-form-field-appearance-fill .mat-form-field-label {
+    color: #e53935; // Crvena boja za labelu
+  }
+  
+  mat-form-field.mat-form-field-appearance-fill .mat-input-element {
+    color: #e53935; // Crvena boja za unos
+  }
+  
+  

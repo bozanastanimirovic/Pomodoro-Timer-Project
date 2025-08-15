@@ -1,0 +1,70 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #a80d0d;
+
+  .app-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+  }
+
+  img {
+    width: 60px;
+    height: 60px;
+  }
+  
+
+  .spacer {
+    flex: 1; 
+  }
+
+  .user-info {
+    color: white;
+    margin-right: 10px;
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  button[mat-button] {
+    color: white;
+    margin-right: 20px;
+    font-weight: bold;
+  }
+
+  button[mat-button]:hover {
+    color: white;
+    margin-right: 20px;
+    font-weight: bold;
+    background-color: #c61818;
+  }
+
+  button[mat-icon-button] {
+    color: white;
+  }
+
+  .white-icon {
+    color: white;
+  }
+
+  .login {
+    font-size: 16px;
+    color: white;
+    margin-left: 5px;
+  }
+
+  .link {
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+      color: rgb(245, 179, 202);
+    }
+  }
+}

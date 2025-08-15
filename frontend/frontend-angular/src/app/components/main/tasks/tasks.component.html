@@ -1,0 +1,40 @@
+<div class="task-list">
+  <h2>
+    Tasks
+    <button mat-icon-button color="warn" (click)="toggleForm()">
+      <mat-icon>{{ showForm ? 'close' : 'add' }}</mat-icon>
+    </button>
+  </h2>
+
+  <form *ngIf="showForm" (submit)="addTask(taskInput.value); taskInput.value=''; toggleForm()" class="task-form">
+    <mat-form-field appearance="outline">
+      <input
+        #taskInput
+        matInput
+        placeholder="Task name"
+        [(ngModel)]="taskName"
+        name="name"
+        required
+      />
+    </mat-form-field>
+    <button mat-raised-button color="warn" type="submit">Save</button>
+    <button mat-button color="warn" type="button" (click)="toggleForm()">Cancel</button>
+  </form>
+
+  <ul>
+    <li
+      *ngFor="let task of tasks"
+      [class.selected]="task === selectedTask"
+      (click)="selectTask(task)"
+      class="task-item"
+    >
+      <span>{{ task.name }}</span>
+      <button mat-icon-button color="warn" (click)="toggleTaskFinished(task); $event.stopPropagation()">
+        <mat-icon>check_circle</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="deleteTask(task.id); $event.stopPropagation()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </li>
+  </ul>
+</div>

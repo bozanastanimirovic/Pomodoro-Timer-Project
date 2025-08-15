@@ -1,0 +1,52 @@
+.pomodoro-timer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    width: 300px;
+    margin: 50px auto;
+  
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+  
+    .timer {
+      font-size: 50px;
+      font-weight: bold;
+      color: #bf0e0e;
+      margin-bottom: 20px;
+    }
+  
+    .controls {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  
+      button {
+        padding: 10px 20px;
+        font-size: 18px;
+        color: white;
+        background-color: #bf0e0e;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+  
+        &:hover {
+          background-color: #bf0e0e;
+        }
+  
+        &:disabled {
+          background-color: #e0e0e0;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+  
